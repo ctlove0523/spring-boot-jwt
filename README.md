@@ -60,19 +60,15 @@ spring-boot-jwt/
  └── pom.xml
 ```
 
-# Introduction (https://jwt.io)
+# 简介 (https://jwt.io)
 
-Just to throw some background in, we have a wonderful introduction, courtesy of **jwt.io**! Let’s take a look:
+JWT是用于不同部分之间安全表示身份信息的开放、工业标准（RFC 7519）方法。
 
-## What is JSON Web Token?
+## 什么是 JSON Web Token?
 
-JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed. JWTs can be signed using a secret (with the HMAC algorithm) or a public/private key pair using RSA.
+JWT是定义了一种紧凑独立方法的开放标准，用于使用JSON对象在不同部分之间安全传递信息。因为信息被数字签名，因此可以被验证和信任。JWT可以使用秘钥（结合HMAC算法）或公私钥（使用RSA或ECDSA算法）签名。
 
-Let's explain some concepts of this definition further.
-
-**Compact**: Because of their smaller size, JWTs can be sent through a URL, POST parameter, or inside an HTTP header. Additionally, the smaller size means transmission is fast.
-
-**Self-contained**: The payload contains all the required information about the user, avoiding the need to query the database more than once.
+尽管JWT可以加密，以便在各方之间提供安全，我们将更加专注于*签名*令牌。
 
 ## When should you use JSON Web Tokens?
 
