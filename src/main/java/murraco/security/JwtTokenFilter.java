@@ -1,6 +1,6 @@
 package murraco.security;
 
-import murraco.exception.CustomException;
+import io.github.ctlove0523.jwt.execption.CustomException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -11,10 +11,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * We should use OncePerRequestFilter since we are doing a database call,
- * there is no point in doing this more than once
- */
 public class JwtTokenFilter extends OncePerRequestFilter {
 
     private JwtTokenProvider jwtTokenProvider;
@@ -40,5 +36,4 @@ public class JwtTokenFilter extends OncePerRequestFilter {
 
         filterChain.doFilter(httpServletRequest, httpServletResponse);
     }
-
 }
