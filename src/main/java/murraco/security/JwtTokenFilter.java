@@ -1,6 +1,6 @@
 package murraco.security;
 
-import io.github.ctlove0523.jwt.execption.CustomException;
+import murraco.exception.CustomException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;

@@ -1,11 +1,11 @@
 package murraco.security;
 
-import io.github.ctlove0523.jwt.model.Role;
-import io.github.ctlove0523.jwt.service.SigningKeyService;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.SignatureException;
+import murraco.model.Role;
+import murraco.service.SigningKeyService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

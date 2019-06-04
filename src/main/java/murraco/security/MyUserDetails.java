@@ -1,7 +1,7 @@
 package murraco.security;
 
-import io.github.ctlove0523.jwt.model.User;
-import io.github.ctlove0523.jwt.repository.UserRepository;
+import murraco.model.User;
+import murraco.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
