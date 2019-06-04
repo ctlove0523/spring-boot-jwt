@@ -1,14 +1,16 @@
 package murraco.security;
 
+import io.github.ctlove0523.jwt.model.User;
+import io.github.ctlove0523.jwt.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import murraco.model.User;
-import murraco.repository.UserRepository;
-
+/**
+ * @author c00382802
+ */
 @Service
 public class MyUserDetails implements UserDetailsService {
 
@@ -19,12 +21,13 @@ public class MyUserDetails implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         final User user = userRepository.findByUsername(username);
 
-        if (user == null) {
-            throw new UsernameNotFoundException("User '" + username + "' not found");
+        if(null == user) {
+            throw new UsernameNotFoundException("no user with name " + username);
         }
 
         return org.springframework.security.core.userdetails.User
-                .withUsername(username)
+                .builder()
+                .username(username)
                 .password(user.getPassword())
                 .authorities(user.getRoles())
                 .accountExpired(false)
@@ -33,5 +36,4 @@ public class MyUserDetails implements UserDetailsService {
                 .disabled(false)
                 .build();
     }
-
 }
